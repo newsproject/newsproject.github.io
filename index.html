@@ -28,7 +28,17 @@
 
   <body ng-app="NewsApp">
      <div ng-controller="MainController">
-  
+
+         <div ng-hide="dataLoaded">
+<div class="sk-folding-cube">
+  <div class="sk-cube1 sk-cube"></div>
+  <div class="sk-cube2 sk-cube"></div>
+  <div class="sk-cube4 sk-cube"></div>
+  <div class="sk-cube3 sk-cube"></div>
+</div>
+    </div>  
+           <div ng-show="dataLoaded">
+
     <div class="title">
         <i class="fa fa-bullhorn fa-3x"></i>
     <h1 class="title" id="logo">aplos news</h1>
@@ -49,7 +59,7 @@
          <h2> {{news.posts[0].title}}</h1>
             <img ng-src="{{news.posts[0].thread.main_image}}">
            <h3>Published {{news.posts[0].published | date}} by {{news.posts[0].thread.site}}</h2>
-            <p class="text">{{news.posts[0].text}}</p>
+            <div class="text">{{news.posts[0].text}}</div>
                <a href="{{news.posts[0].url}}">source</a>
            </div>
       </div>              
@@ -77,9 +87,9 @@
          </div>
       
     <footer class="des">top three news of the day. made by <a href="http://bryanchen.ml">Bryan C</a> with AngularJS + webhose </footer>
+         </div>
     
-    
-    
+      </div>
 <script type="text/javascript">
 $(document).ready(function() {
 })    
